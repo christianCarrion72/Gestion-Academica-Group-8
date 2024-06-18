@@ -1,0 +1,83 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="gestion_academica.alumno_tree">
+          <field name="name">gestion_academica alumno tree</field>
+          <field name="model">gestion_academica.alumno</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="name"/>
+                  <field name="edad"/>
+                  <field name="grado"/>
+                  <field name="curso_id"/>
+              </tree>
+          </field>
+      </record>
+  
+  </data>
+</odoo>
+<!--
+     <!- Vista Kanban para Alumno ->
+        <record model="ir.ui.view" id="gestion_academica.alumno_kanban">
+            <field name="name">gestion_academica.alumno.kanban</field>
+            <field name="model">gestion_academica.alumno</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <!- Campos que se mostrarán en la vista kanban ->
+                                    <strong><field name="name"/></strong>
+                                    <div>Edad: <field name="edad"/></div>
+                                    <!- Asumiendo que 'curso_id' es un campo many2one al modelo de cursos ->
+                                    <div>Curso: <field name="curso_id"/></div>
+                                    <div>Grado: <field name="grado"/></div>
+                                    <!- Mostrar apoderados a través de la relación parentesco ->
+                                    <div>Apoderados:
+                                        <!- Usamos un subcampo para acceder a los apoderados a través de parentesco_ids ->
+                                        <ul>
+                                            <li t-foreach="record.parentesco_ids.raw_value" t-as="parentesco">
+                                                <span t-esc="parentesco.apoderado_id[1]"/>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
+        <!- Vista Formulario para Alumno ->
+        <record model="ir.ui.view" id="gestion_academica.alumno_form">
+            <field name="name">gestion_academica.alumno.form</field>
+            <field name="model">gestion_academica.alumno</field>
+            <field name="arch" type="xml">
+                <form string="Alumno">
+                    <sheet>
+                        <group>
+                            <!- Campos del modelo Alumno ->
+                            <field name="name"/>
+                            <field name="edad"/>
+                            <field name="grado"/>
+                            <field name="curso_id"/>
+                        </group>
+                        <!-Sección para Apoderados ->
+                        <notebook>
+                            <page string="Apoderados">
+                                <!- Usamos un campo many2many_tags para mostrar los apoderados ->
+                                <field name="parentesco_ids" widget="many2many_tags">
+                                    <!- Especificamos las opciones para el campo many2many_tags ->
+                                    <tree>
+                                        <!- Mostramos el nombre del apoderado a través de la relación parentesco ->
+                                        <field name="apoderado_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>-->

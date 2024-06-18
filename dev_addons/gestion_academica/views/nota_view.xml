@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="view_nota_tree" model="ir.ui.view">
+            <field name="name">gestion_academica.nota.tree</field>
+            <field name="model">gestion_academica.nota</field>
+            <field name="arch" type="xml">
+                <tree string="Nota">
+                    <field name="ponderacion"/>
+                    <field name="alumno_id"/>
+                    <field name="materiacursogestion_id"/>
+                    <field name="bimestre_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_nota_form" model="ir.ui.view">
+            <field name="name">gestion_academica.nota.form</field>
+            <field name="model">gestion_academica.nota</field>
+            <field name="arch" type="xml">
+                <form string="Nota">
+                    <group>
+                        <field name="ponderacion"/>
+                        <field name="alumno_id"/>
+                        <field name="materiacursogestion_id"/>
+                        <field name="bimestre_id"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

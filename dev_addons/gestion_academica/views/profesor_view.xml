@@ -1,0 +1,155 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="gestion_academica.profesor_list">
+        <field name="name">gestion_academica profesor list</field>
+        <field name="model">gestion_academica.profesor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="edad"/>
+                <field name="especialidad"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_profesor_window">
+      <field name="name">gestion_academica profesor window</field>
+      <field name="res_model">gestion_academica.profesor</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="gestion_academica.action_curso_window">
+        <field name="name">gestion_academica curso window</field>
+        <field name="res_model">gestion_academica.curso</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_alumno_window">
+        <field name="name">gestion_academica alumno window</field>
+        <field name="res_model">gestion_academica.alumno</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>    
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_apoderado_window">
+        <field name="name">gestion_academica apoderado window</field>
+        <field name="res_model">gestion_academica.apoderado</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_gestion_window">
+      <field name="name">gestion_academica gestion window</field>
+      <field name="res_model">gestion_academica.gestion</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          Crear una nueva gestión académica
+        </p>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_materia_window">
+      <field name="name">gestion_academica materia window</field>
+      <field name="res_model">gestion_academica.materia</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_paralelo_window">
+      <field name="name">gestion_academica paralelo window</field>
+      <field name="res_model">gestion_academica.paralelo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_horario_window">
+      <field name="name">gestion_academica horario window</field>
+      <field name="res_model">gestion_academica.horario</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_inscripcion_window">
+      <field name="name">gestion_academica inscripcion window</field>
+      <field name="res_model">gestion_academica.inscripcion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_comunicado_window">
+      <field name="name">gestion_academica comunicado window</field>
+      <field name="res_model">gestion_academica.comunicado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_nota_window">
+      <field name="name">gestion_academica nota window</field>
+      <field name="res_model">gestion_academica.nota</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gestion_academica.action_bimestre_window">
+      <field name="name">gestion_academica bimestre window</field>
+      <field name="res_model">gestion_academica.bimestre</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="gestion_academica.action_server">
+      <field name="name">gestion_academica server</field>
+      <field name="model_id" ref="model_gestion_academica_gestion_academica"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Gestion Academica" id="gestion_academica.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Cursos y Planificacion" id="gestion_academica.menu_1" parent="gestion_academica.menu_root"/>
+    <menuitem name="Aulas y Recursos" id="gestion_academica.menu_2" parent="gestion_academica.menu_root"/>
+    <menuitem name="Registro y Control" id="gestion_academica.menu_3" parent="gestion_academica.menu_root"/>
+    <menuitem name="Evaluaciones y desempeño" id="gestion_academica.menu_4" parent="gestion_academica.menu_root"/>
+    <menuitem name="Personal Academico" id="gestion_academica.menu_5" parent="gestion_academica.menu_root"/>
+    <menuitem name="Comunicacion y Actividades" id="gestion_academica.menu_6" parent="gestion_academica.menu_root"/>
+    <menuitem name="Admisiones" id="gestion_academica.menu_7" parent="gestion_academica.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Profesores" id="gestion_academica.menu_1_profesor_list" parent="gestion_academica.menu_5"
+              action="gestion_academica.action_profesor_window"/>
+    <menuitem name="Cursos" id="gestion_academica.menu_1_curso_list" parent="gestion_academica.menu_1"
+              action="gestion_academica.action_curso_window"/>
+    <menuitem name="Alumnos" id="gestion_academica.menu_1_alumno_list" parent="gestion_academica.menu_3"
+              action="gestion_academica.action_alumno_window"/>
+    <menuitem name="Apoderados" id="gestion_academica.menu_1_apoderado_list" parent="gestion_academica.menu_3"
+              action="gestion_academica.action_apoderado_window"/>
+    <menuitem name="Gestion" id="gestion_academica.menu_1_gestion_list_1" parent="gestion_academica.menu_1"
+              action="gestion_academica.action_gestion_window"/>
+    <menuitem name="Materia" id="gestion_academica.menu_1_materia_list_2" parent="gestion_academica.menu_1"
+              action="gestion_academica.action_materia_window"/>
+    <menuitem name="Paralelo" id="gestion_academica.menu_1_paralelo_list_3" parent="gestion_academica.menu_1"
+              action="gestion_academica.action_paralelo_window"/>
+    <menuitem name="Horario" id="gestion_academica.menu_1_horario_list_4" parent="gestion_academica.menu_1"
+              action="gestion_academica.action_horario_window"/>
+    <menuitem name="Inscripcion" id="gestion_academica.menu_1_inscripcion_list_3" parent="gestion_academica.menu_3"
+              action="gestion_academica.action_inscripcion_window"/>
+    <menuitem name="Comunicado" id="gestion_academica.menu_1_comunicado_list" parent="gestion_academica.menu_6"
+              action="gestion_academica.action_comunicado_window"/>              
+    <menuitem name="Nota" id="gestion_academica.menu_1_nota_list_1" parent="gestion_academica.menu_4"
+              action="gestion_academica.action_nota_window"/>
+    <menuitem name="Bimestre" id="gestion_academica.menu_1_bimestre_list_2" parent="gestion_academica.menu_4"
+              action="gestion_academica.action_bimestre_window"/>
+    <!--<menuitem name="Server to list" id="gestion_academica" parent="gestion_academica.menu_2"
+              action="gestion_academica.action_server"/>
+-->
+  </data>
+</odoo>

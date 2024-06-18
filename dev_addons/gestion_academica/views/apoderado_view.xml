@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="gestion_academica.apoderado_form">
+        <field name="name">gestion_academica apoderado form</field>
+        <field name="model">gestion_academica.apoderado</field>
+        <field name="arch" type="xml">
+            <form string="Apoderado">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="ci"/>
+                        <field name="genero"/>
+                        <field name="telefono"/>
+                        <field name="parentesco_ids" widget="one2many_list">
+                            <tree editable="bottom">
+                                <field name="alumno_id"/>
+                                <field name="descripcion"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+  </data>
+</odoo>

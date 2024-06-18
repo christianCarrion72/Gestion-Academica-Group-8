@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <!-- Vista Kanban -->
+        <record model="ir.ui.view" id="gestion_academica.curso_kanban">
+            <field name="name">gestion_academica.curso.kanban</field>
+            <field name="model">gestion_academica.curso</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong><field name="name"/></strong>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Vista Formulario -->
+        <record model="ir.ui.view" id="gestion_academica.curso_form">
+            <field name="name">gestion_academica.curso.form</field>
+            <field name="model">gestion_academica.curso</field>
+            <field name="arch" type="xml">
+                <form string="Curso">
+                    <header>
+                        <!-- Puedes agregar botones o acciones en el encabezado si es necesario -->
+                    </header>
+                    <sheet>
+                        <notebook>
+                            <page string="Información General">
+                                <group>
+                                    <field name="name"/>
+                                    <field name="descripcion"/>
+                                </group>
+                            </page>
+                            <!-- Agrega más páginas si necesitas organizar la información en secciones -->
+                            <page string="Alumnos">
+                                <field name="alumno_ids" widget="one2many_list">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="edad"/>
+                                        <field name="grado"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <!-- Agrega otros campos o grupos fuera del notebook si es necesario -->
+                    </sheet>
+                </form>
+            </field>
+        </record>   
+    </data>
+</odoo>

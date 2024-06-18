@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+      <!-- Vista de Lista (Tree) -->
+      <record model="ir.ui.view" id="gestion_academica.materia_tree" >
+        <field name="name">gestion.academica materia tree</field>
+        <field name="model">gestion_academica.materia</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="name"/>
+          </tree>
+        </field>
+      </record>
+  
+      <!-- Vista de Formulario (Form) -->
+      <record id="view_materia_form" model="ir.ui.view">
+        <field name="name">gestion.academica materia form</field>
+        <field name="model">gestion_academica.materia</field>
+        <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="name"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+    </data>
+</odoo>

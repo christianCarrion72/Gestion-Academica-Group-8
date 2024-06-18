@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!-- Vista de Lista (Tree) -->
+        <record model="ir.ui.view" id="gestion_academica.horario_tree">
+            <field name="name">gestion.academica.horario.tree</field>
+            <field name="model">gestion_academica.horario</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="materia"/>
+                    <field name="dia"/>
+                    <field name="hora_inicio"/>
+                    <field name="hora_fin"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de Formulario (Form) -->
+        <record model="ir.ui.view" id="gestion_academica.horario_form">
+            <field name="name">gestion.academica.horario.form</field>
+            <field name="model">gestion_academica.horario</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="materia"/>
+                            <field name="dia"/>
+                            <field name="hora_inicio"/>
+                            <field name="hora_fin"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

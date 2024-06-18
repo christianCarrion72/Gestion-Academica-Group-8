@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+      <!-- Vista de Lista (Tree) -->
+      <record model="ir.ui.view" id="gestion_academica.gestion_tree" >
+        <field name="name">gestion.academica.gestion.tree</field>
+        <field name="model">gestion_academica.gestion</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="name"/>
+            <field name="fecha_inicio"/>
+            <field name="fecha_final"/>
+          </tree>
+        </field>
+      </record>
+  
+      <!-- Vista de Formulario (Form) -->
+      <record id="view_gestion_form" model="ir.ui.view">
+        <field name="name">gestion.academica.gestion.form</field>
+        <field name="model">gestion_academica.gestion</field>
+        <field name="arch" type="xml">
+          <form>
+            <sheet>
+              <group>
+                <field name="name"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_final"/>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+    </data>
+</odoo>

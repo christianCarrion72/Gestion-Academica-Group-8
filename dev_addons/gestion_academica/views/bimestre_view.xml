@@ -1,0 +1,37 @@
+BIMESTRE
+<odoo>
+    <data>
+        <record id="view_bimestre_tree" model="ir.ui.view">
+            <field name="name">gestion_academica.bimestre.tree</field>
+            <field name="model">gestion_academica.bimestre</field>
+            <field name="arch" type="xml">
+                <tree string="Bimestre">
+                    <field name="descripcion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_bimestre_form" model="ir.ui.view">
+            <field name="name">gestion_academica.bimestre.form</field>
+            <field name="model">gestion_academica.bimestre</field>
+            <field name="arch" type="xml">
+                <form string="Bimestre">
+                    <group>
+                        <field name="descripcion"/>
+                    </group>
+                    <notebook>
+                        <page string="Nota">
+                            <field name="nota_ids">
+                                <tree string="Nota">
+                                    <field name="ponderacion"/>
+                                    <field name="alumno_id"/>
+                                    <field name="materiacursogestion_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
